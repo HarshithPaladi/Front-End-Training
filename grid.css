@@ -6,7 +6,6 @@
     height: auto;
     justify-content: space-evenly;
     column-gap: 50px;
-    z-index: 1;
 }
 
 .grid-item {
@@ -20,6 +19,7 @@
     width: 300px;
     height: 300px;
     overflow: hidden;
+    z-index: 1;
 }
 
 .images {
@@ -27,20 +27,33 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-out;
     aspect-ratio: 1;
 }
 
 .images:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
     transition: transform 0.5s ease-in-out;
 }
 
-#background-image {
-    background-image: url(media/nic-chi-guvnhd3hbxw-unsplash.jpg);
-    position: absolute;
+#menu-background-image {
+    background-image: url("media/nic-chi-guvnhd3hbxw-unsplash.jpg");
+    background-position: center 40%;
+    background-size: 110vmax;
+    image-rendering:auto;
+    height: 100%;
     left: 0px;
+    position: absolute;
     top: 0px;
+    transition: background-size 800ms ease,
+        background-position 800ms ease;
+    width: 100%;
     z-index: 0;
+}
 
+.grid-container:hover + #menu-background-image {
+
+    background-size: 100vmax;
+    opacity: 0.99;
+    transition: 500ms ease-out;
 }
