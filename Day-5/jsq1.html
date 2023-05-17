@@ -1,0 +1,164 @@
+<!-- Platina Bakery is celebrating the platinum year since its founding and as an offer to its customers it has announced a
+week offer for its customers who are buying any items irrespective of the price:
+
+For the next week starting from tomorrow there is a discount for everyday:
+
+MONDAY - 15%
+TUESDAY - 10%
+WEDNESDAY - 12%
+THURSDAY - 11%
+FRIDAY - 13%
+SATURDAY - 14%
+SUNDAY - 15%
+
+One customer can submit only one bill and if customer submits many bills, only first bill of the day will be taken into
+account. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platina Bakery Week Offer</title>
+</head>
+<style>
+    #table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: small;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    div{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+</style>
+
+<body>
+    <h1>Offers</h1>
+    <div>
+    <table id="table">
+        <tr>
+            <th>Day</th>
+            <th>Discount</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>15%</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>10%</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>12%</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>11%</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>13%</td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td>14%</td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td>15%</td>
+        </tr>
+    </table>
+    </div>
+    <br>
+    <div>
+    <h2>Submit your bill here</h2>
+    <br>
+    <div>
+    <label for="Amount">Amount</label>
+    <input type="number" name="bill" id="bill" placeholder="Enter your bill amount" style="margin-right: 20px;">
+    <label for="day">Day</label>
+    <select name="day" id="day">
+        <option value="0">Sunday</option>
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5">Friday</option>
+        <option value="6">Saturday</option>
+    </select>
+
+    <hr>
+    <button onclick="discount()" style="margin-right: 10px;">Submit</button>
+    <button onclick="resetLocalStorage()">Reset</button>
+    <p id="result"></p>
+    </div>
+    </div>
+    <script>
+        function discount() {
+            const bill = document.getElementById("bill").value;
+            let discount = 0;
+            const day = parseInt(document.getElementById("day").value);
+            console.log(day);
+            switch (day) {
+                case 0:
+                    discount = 15;
+                    break;
+                case 1:
+                    discount = 10;
+                    break;
+                case 2:
+                    discount = 12;
+                    break;
+                case 3:
+                    discount = 11;
+                    break;
+                case 4:
+                    discount = 13;
+                    break;
+                case 5:
+                    discount = 14;
+                    break;
+                case 6:
+                    discount = 15;
+                    break;
+                default:
+                    break;
+            }
+            const discountedBill = bill - (bill * discount / 100);
+            // write to localstorage to avoid multiple bills
+            localStorage.setItem("bill", bill);
+            localStorage.setItem("discount", discount);
+            localStorage.setItem("discountedBill", discountedBill);
+            if (localStorage.getItem("bill") !== null) {
+                alert("You have already submitted your bill for the day" + "\nYour bill is " + bill +
+                    "\nYour discount is " + discount +
+                    "\nYour discounted bill is " + discountedBill);
+                return;
+            }
+            else {
+                alert("You have successfully submitted your bill for the day");
+            }
+
+            document.getElementById("result").innerHTML = "Your discounted bill is " + discountedBill;
+        }
+        function resetLocalStorage() {
+            localStorage.clear();
+            alert("Local Storage Cleared");
+        }
+    </script>
+</body>
+
+</html>

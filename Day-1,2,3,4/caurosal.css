@@ -1,0 +1,90 @@
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgs {
+    aspect-ratio: 3/2;
+    margin: 10px;
+    border-radius: 10%;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.imgs:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+#slider {
+    width: 100vw;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    animation: carousal 20s ease-in infinite;
+    margin-bottom: 20px;
+}
+
+#slider:hover {
+    animation-play-state: paused;
+}
+
+#modern {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto auto auto auto auto;
+    height: 200px;
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 5%;
+    justify-content: space-evenly;
+}
+
+#modern .img-expand {
+    width: 100px;
+    aspect-ratio: 3/2;
+    margin: 10px;
+    border-radius: 10%;
+    z-index: 2;
+    transition-duration: 500ms;
+}
+
+#modern .img-expand:hover {
+    width: 300px;
+    
+}
+
+#background-image {
+    background-image: url(media/richard-gatley-La5V_Qr6h3A-unsplash.jpg);
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.9;
+}
+
+@keyframes carousal {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-150%);
+    }
+
+    0% {
+        transform: translateX(100%);
+    }
+}

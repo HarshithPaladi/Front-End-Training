@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function add_nums() {
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const c = parseInt(a) + parseInt(b);
+        document.getElementById("result").innerHTML = "Sum is " + c;
+    }
+    function sub_nums() {
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const c = parseInt(a) - parseInt(b);
+        document.getElementById("result").innerHTML = "Subtraction is " + c;
+    }
+    function mul_nums() {
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const c = parseInt(a) * parseInt(b);
+        document.getElementById("result").innerHTML = "Multipliation is " + c;
+    }
+    function div_nums() {
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const c = parseInt(a) / parseInt(b);
+        document.getElementById("result").innerHTML = "Divison is " + c;
+    }
+    function mod_nums(){
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        const c = parseInt(a) % parseInt(b);
+        document.getElementById("result").innerHTML = "Mod is " + c;
+    }
+    function compare(){
+        const a = document.getElementById("num1").value;
+        const b = document.getElementById("num2").value;
+        document.getElementById("result").innerHTML = "Compare is " + (a==b);
+    }
+        function strict_compare() {
+                const a = document.getElementById("num1").value;
+                const b = document.getElementById("num2").value;
+                document.getElementById("result").innerHTML = "Compare is " + (a === b);
+            }
+
+    function welcome() {
+        document.getElementById("welcomeMessage")
+            .innerHTML = 'Welcome';
+    }
+
+</script>
+
+<body>
+    <!-- <button onclick="welcome()">Welcome</button>
+    <p id="welcomeMessage">HI</p> -->
+    <input type="number" name="a" id="num1">
+    <input type="number" name="b" id="num2">
+    <br>
+    <button onclick="add_nums()">Add</button>
+    <button onclick="sub_nums()">Sub</button>
+    <button onclick="mul_nums()">Mul</button>
+    <button onclick="div_nums()">Div</button>
+    <button onclick="mod_nums()">Mod</button>
+    <!-- <button onclick="compare()">Compare</button>
+    <button onclick="strict_compare()">Strict Compare</button> -->
+    <p id="result">Result</p>
+
+</body>
+
+</html>

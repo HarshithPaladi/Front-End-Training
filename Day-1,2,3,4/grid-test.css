@@ -1,0 +1,16 @@
+.grid-test {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(3, 1fr);
+    /* column-gap: 10px; */
+    /* row-gap: 5px; */
+    gap: 1rem;
+    height: 100vh;
+    width: auto;
+}
+
+.nums {
+    border: 2px solid black;
+    display: grid;
+    place-items: center;
+}

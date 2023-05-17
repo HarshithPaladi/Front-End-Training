@@ -1,0 +1,47 @@
+<!-- A new shopping mall has been opened in the city. To attract people and to bring in crowd, the mall has announced some
+schemes.
+If a person is visiting a shop atleast once, they will be given a welcome gift of 100GV.
+If the cost of any purchased items value is more than 1000, a 500 GV will be given.
+If the cost of any purchased items value is more than 3000, a 1500 GV will be given.
+If the cost of any purchased items value is more than 5000, a 3000 GV will be given.
+
+Based on the user visits and purchase, give the gifts to the people. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+        function claim() {
+            const visits = document.getElementById("visits").value;
+            const purValue = document.getElementById("purValue").value;
+            let gift = 0;
+            if (visits == 1) {
+                gift = 100;
+            }
+            if (purValue > 1000) {
+                gift = 500;
+            }
+            if (purValue > 3000) {
+                gift = 1500;
+            }
+            if (purValue > 5000) {
+                gift = 3000;
+            }
+            document.getElementById("result").innerHTML = "Gift is " + gift;
+        }
+</script>
+<body>
+    <h1>Claim your vouchers here!</h1>
+    <input type="number" name="Visits" id="visits" placeholder="No Of Visits">
+    <br>
+    <input type="number" name="Purchased Value" id="purValue" placeholder="Purchased Value">
+    <br>
+    <button onclick="claim()">Claim</button>
+    <p id="result"></p>
+</body>
+</html>

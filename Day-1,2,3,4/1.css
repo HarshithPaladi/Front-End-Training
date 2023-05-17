@@ -1,13 +1,14 @@
-#demo{
+#demo {
     width: 100px;
     height: 100px;
     background: blue;
     border: 2px solid;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px yellow,5px 5px 5px 5px red;
+    box-shadow: 5px 5px 5px 5px yellow, 5px 5px 5px 5px red;
     margin: 5px;
 }
-#box{
+
+#box {
     width: 200px;
     height: 200px;
     background: blue;
@@ -16,19 +17,22 @@
     /* transform: skewX(30deg); */
     transform: rotate(30deg);
 }
-#circle{
+
+#circle {
     width: 50px;
     height: 50px;
     background: red;
     border: 5px greenyellow solid;
     border-radius: 100%;
-    transform:translate(35px,35px);
+    transform: translate(35px, 35px);
 }
-#circle:hover{
+
+#circle:hover {
     scale: 2;
 }
-#text{
-    overflow:hidden;
+
+#text {
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 250px;
@@ -38,17 +42,20 @@
     color: white;
     margin: 5px;
 }
-#text:hover{
-    overflow:visible;
+
+#text:hover {
+    overflow: visible;
     white-space: normal;
     text-transform: capitalize;
 }
-#icon{
+
+#icon {
     display: none;
     width: auto;
     height: auto;
 }
-#icon-div{
+
+#icon-div {
     display: flex;
     width: 350px;
     height: 50px;
@@ -59,38 +66,48 @@
     color: white;
     margin: 5px;
 }
-#icon-div:hover #icon{
+
+#icon-div:hover #icon {
     display: block;
 }
-#anim{
-width: 101px;
-height: 101px;
-background: blue;
-border: 2px solid red;
+
+#anim {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    border: 2px solid red;
+    transition: 0.8s;
 }
+
 #anim:hover{
-    animation-name: anims;
-    animation-duration: 5s;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out;
+    translate: 100px;
+    transition: 0.8s;
 }
-
-@keyframes anims{
-    0%{
-        transform: translateX(0px);
+#slider-container{
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.anim-box{
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: 0.8s;
+    margin-right: 5px;
+}
+.anim-box:hover{
+    scale: 1.2;
+    transition: 0.8s
+}
+#slider-container:hover .anim-box{
+    animation: caurosal 3s linear infinite;
+}
+@keyframes caurosal{
+    from{
+        transform: translateX(-100%);
     }
-
-    100%{
-        transform: translateX(200px);
-    }
-
-    0%{
-        transform: translateX(200px);
-    }
-    100%{
-        transform: translateX(0px);
+    to{
+        transform: translateX(100%);
     }
 }

@@ -1,0 +1,24 @@
+<html>
+
+<body><button onclick=welcome()>Welcome</button>
+    <p id="welcomeMessage">Hi</p><button onclick=train()>train</button>
+    <p id="Trainingdetails">Details</p>
+    <p>Hi break here</p>
+    <p id="trainerdetail">Detail</p>
+    <script>
+    function welcome() { 
+        document.getElementById("welcomeMessage").innerHTML = 'Welcome';
+        /*const pi=3.14;*/ 
+        }
+        /*function train(){const pi=3.14;*/
+        const trainerdetail = new Object(); trainerdetail.trainer = "Arun";
+        trainerdetail.company = "Prograd"; trainerdetail.Programming = "JS";
+        document.getElementById("trainerdetail").innerHTML = 'Today training details:' + trainerdetail.company 
+                        + trainerdetail.trainer + trainerdetail.Programming; 
+        let training = { trainer: "Arun", company: "Prograd", Programming: "JS" }; 
+        document.getElementById("Trainingdetails").innerHTML = 'Today training details:' + training.company 
+                            + training.trainer + training.Programming;
+        }const trainertwo=trainerdetail;console.log(trainerdetail.trainer);console.log(trainertwo.trainer);trainertwo.trainer="AR";console.log(trainerdetail.trainer);console.log(trainertwo.trainer);const students=[{name:"Arun",class:"XII"},{name:"AR",class:"X"}];n="name";console.log(students[n]);console.log(students["name"]);console.log("break");const studentss={name:"Arun",add: function(){console.log("Add");}};studentss.add();const bakery=new Bakery();function Bakery(item,price){this.item=item;this.price=price;}Bakery.prototype.mfgdate='May 15';/*const bakeryone=new Bakery();const bakerytwo=new Bakery();console.log(bakeryone.price+" "+bakerytwo.price);*/const bakerythree=new Bakery("Bun",20);console.log(bakerythree.price+" " +bakerythree.mfgdate);/*n="name";console.log(students[n]);console.log(students["name"]);console.log("break");let s="";for(let name in students){s+=students[name];}console.log(s);*/</script>
+</body>
+
+</html>
