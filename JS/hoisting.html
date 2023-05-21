@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Variable Hoisting with `var`
+        console.log("Variable Hoisting with var")
+        console.log(x);
+        var x = 10;
+        console.log(x); 
+        console.log("=====================================");
+
+
+        // var x;               // Variable declaration is hoisted to the top
+                                // and by default it is undefined
+        // console.log(x); 
+        // x = 10; 
+        // console.log(x);
+
+
+        //Function Hoisting:
+        console.log("Function Hoisting:")
+        hello();
+        function hello() {
+            console.log("Hello, world!");
+        }
+        console.log("=====================================");
+
+        // function hello() {
+        //         console.log("Hello, world!");
+        //     }
+        //     hello(); 
+
+
+        // Hoisting within Function Scope:
+        console.log("Hoisting within Function Scope:")
+        myFunction();
+        function myFunction() {
+            console.log(x);
+            var x = 10;
+            console.log(x);
+        }
+        console.log("=====================================");
+
+    // function myFunction() {
+    //     var x; 
+    //     console.log(x); 
+    //     x = 10; 
+    //     console.log(x); 
+    // }
+    // myFunction();
+
+
+        // // Hoisting Does Not Apply to let and const:
+        // console.log("Hoisting Does Not Apply to let and const:")
+        // console.log(a); // Output: ReferenceError: a is not defined
+        // let a = 10;
+        // console.log(a); // Output: 10
+        // console.log(y);
+        // const y = 10;
+        // console.log(y);
+        // console.log("=====================================");
+    function example() {
+        if (true) {
+            let x = 10; // Block-level scope
+            console.log(x);
+        }
+        console.log(x);
+    }
+    example();
+    console.log(x)
+
+
+    </script>
+</body>
+
+</html>
