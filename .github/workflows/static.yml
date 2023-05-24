@@ -24,16 +24,16 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: List Folders
         id: list-folders
         run: |
-          FOLDERS=$(find . -type d -name "StaticHTML" -exec dirname {} \;)
-          echo "::set-output name=folders::$FOLDERS"
+          FOLDERS=$(find . -type f -name "StaticHTML" -exec dirname {} \; | sort -u)
+          echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
@@ -47,3 +47,4 @@ jobs:
         with:
           strategy: replace
           path: ${{ steps.list-folders.outputs.folders }}
+          token: ${{ secrets.GITHUB_TOKEN }}
