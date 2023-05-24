@@ -32,7 +32,7 @@ jobs:
       - name: List Folders
         id: list-folders
         run: |
-          FOLDERS=$(find . -type f -name "StaticHTML" -exec dirname {} \; | sort -u)
+          FOLDERS=$(find . -type d -not -path "./.git/*")
           echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
 
       - name: Upload Artifacts
@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy GitHub Pages
         id: deploy-pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
         with:
           strategy: replace
           path: ${{ steps.list-folders.outputs.folders }}
