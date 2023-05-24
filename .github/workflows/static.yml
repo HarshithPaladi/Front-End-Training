@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: List Modified Folders
         id: list-folders
@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload Artifacts
         if: env.FOLDERS != ''
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Folders
           path: ${{ env.FOLDERS }}
@@ -45,7 +45,7 @@ jobs:
       - name: Deploy GitHub Pages
         id: deploy-pages
         if: env.FOLDERS != ''
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
         with:
           strategy: replace
           path: ${{ env.FOLDERS }}
