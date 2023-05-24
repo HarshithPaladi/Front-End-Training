@@ -26,26 +26,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - name: List Modified Folders
+      - name: List Folders
         id: list-folders
         run: |
-          FOLDERS=$(git log --name-only --pretty= --diff-filter=d ${GITHUB_SHA}^..${GITHUB_SHA} | xargs -I{} dirname {} | sort -u | grep "StaticHTML" | xargs)
-          echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
+          FOLDERS=$(find . -type d -name "StaticHTML" -exec dirname {} \;)
+          echo "::set-output name=folders::$FOLDERS"
 
       - name: Upload Artifacts
-        if: env.FOLDERS != ''
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: Folders
-          path: ${{ env.FOLDERS }}
+          path: ${{ steps.list-folders.outputs.folders }}
 
       - name: Deploy GitHub Pages
         id: deploy-pages
-        if: env.FOLDERS != ''
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
         with:
           strategy: replace
-          path: ${{ env.FOLDERS }}
+          path: ${{ steps.list-folders.outputs.folders }}
