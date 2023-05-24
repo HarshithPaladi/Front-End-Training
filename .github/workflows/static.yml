@@ -1,0 +1,51 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy Pages for Folders
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List Modified Folders
+        id: list-folders
+        run: |
+          FOLDERS=$(git diff --name-only HEAD^ HEAD | xargs -I{} dirname {} | sort -u | grep "StaticHTML" | xargs)
+          echo "::set-output name=folders::$FOLDERS"
+
+      - name: Upload Artifacts
+        if: steps.list-folders.outputs.folders != ''
+        uses: actions/upload-artifact@v2
+        with:
+          name: Folders
+          path: ${{ steps.list-folders.outputs.folders }}
+
+      - name: Deploy GitHub Pages
+        id: deploy-pages
+        if: steps.list-folders.outputs.folders != ''
+        uses: actions/deploy-pages@v3
+        with:
+          strategy: replace
+          path: ${{ steps.list-folders.outputs.folders }}
