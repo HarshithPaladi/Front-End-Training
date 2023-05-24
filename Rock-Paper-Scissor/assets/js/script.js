@@ -1,13 +1,13 @@
 // Get DOM elements
-const playerButtons = document.querySelectorAll('.player-options button');
-const playerChoiceDisplay = document.getElementById('player-choice');
-const playerScoreDisplay = document.getElementById('player-score');
-const computerButtons = document.querySelectorAll('.computer-options button');
-const computerChoiceDisplay = document.getElementById('computer-choice');
-const computerScoreDisplay = document.getElementById('computer-score');
-
-let playerScore = 0;
-let computerScore = 0;
+var playerButtons = document.querySelectorAll('.input-btn button');
+var playerOptionImage = document.getElementById('player-option-image');
+var computerOptionImage = document.getElementById('computer-option-image');
+var playerScore = 0;
+var computerScore = 0;
+var playerScoreDisplay = document.getElementById('player-score');
+var computerScoreDisplay = document.getElementById('computer-score');
+const computerChoiceInUI = document.getElementById('computer-choice');
+const playerChoiceInUI = document.getElementById('player-choice');
 
 // Function to generate computer's choice
 function generateComputerChoice() {
@@ -16,37 +16,32 @@ function generateComputerChoice() {
     return choices[randomIndex];
 }
 
-// Function to update the scores on the UI
-function updateScores() {
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
-    if (playerScore === 5) {
-        alert('Player wins!');
-        resetGame();
-    } else if (computerScore === 5) {
-        alert('Computer wins!');
-        resetGame();
+// Function to handle the game logic
+function handleGameLogic(e) {
+    const playerChoice = e.target.id;
+    updatePlayerOptionImage(playerChoice);
+    console.log("Player Choice: " + playerChoice);
+
+    playerChoiceInUI.textContent = playerChoice;
+    // make computer-status visible and player-status invisible
+    document.getElementById('computer-status').style.visibility = 'visible';
+    document.getElementsByClassName('player-status')[0].style.visibility = 'hidden';
+    var computerChoice = generateComputerChoice();
+    console.log("Computer Choice: " + computerChoice);
+    setTimeout(() => {
+        updateComputerOptionImage(computerChoice);
+        computerChoiceInUI.textContent = computerChoice;
+        const winner = determineWinner(playerChoice, computerChoice);
+        if (winner === 'player') {
+            playerScore++;
+        } else if (winner === 'computer') {
+            computerScore++;
+        }
+        updateScores();
+        document.getElementById('computer-status').style.visibility = 'hidden';
+        document.getElementsByClassName('player-status')[0].style.visibility = 'visible';
     }
-}
-
-const playerOptionImage = document.getElementById('player-option-image');
-const computerOptionImage = document.getElementById('computer-option-image');
-
-// Function to update the player's option image
-function updatePlayerOptionImage(choice) {
-    const imagePath = `assets/images/${choice}.jpg`; // Path to the image based on the choice
-    playerOptionImage.src = imagePath;
-}
-
-// Function to update the computer's option image
-function updateComputerOptionImage(choice) {
-    const imagePath = `assets/images/${choice}.jpg`; // Path to the image based on the choice
-    computerOptionImage.src = imagePath;
-}
-// Function to display the choices made by player and computer
-function displayChoices(playerChoice, computerChoice) {
-    playerChoiceDisplay.textContent = playerChoice;
-    computerChoiceDisplay.textContent = computerChoice;
+        , 1000);
 }
 
 // Function to determine the winner
@@ -64,48 +59,46 @@ function determineWinner(playerChoice, computerChoice) {
     }
 }
 
-// Function to handle player's turn
-function handlePlayerTurn(e) {
-    const playerChoice = e.target.id;
-    const computerChoice = generateComputerChoice();
-    const result = determineWinner(playerChoice, computerChoice);
-
-    displayChoices(playerChoice, computerChoice);
-
-    if (result === 'player') {
-        playerScore++;
-    } else if (result === 'computer') {
-        computerScore++;
+// Function to update the scores on the UI
+function updateScores() {
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
+    if (playerScore === 5) {
+        alert('Player wins!');
+        resetGame();
+    } else if (computerScore === 5) {
+        alert('Computer wins!');
+        resetGame();
     }
-    updatePlayerOptionImage(playerChoice);
-    updateComputerOptionImage(computerChoice);
-    updateScores();
+    setTimeout(() => {
+        playerChoiceInUI.textContent = '';
+        computerChoiceInUI.textContent = '';
+    }, 1000);
 }
 
-// Function to handle computer's turn
-function handleComputerTurn() {
-    const playerChoice = generateComputerChoice();
-    const computerChoice = generateComputerChoice();
-    const result = determineWinner(playerChoice, computerChoice);
-
-    displayChoices(playerChoice, computerChoice);
-
-    if (result === 'player') {
-        playerScore++;
-    } else if (result === 'computer') {
-        computerScore++;
-    }
-    updatePlayerOptionImage(playerChoice);
-    updateComputerOptionImage(computerChoice);
-    updateScores();
-}
 // Function to reset the game
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
     updateScores();
+    updatePlayerOptionImage('default');
+    updateComputerOptionImage('default');
+    document.getElementById('player-choice').textContent = '';
+    document.getElementById('computer-choice').textContent = '';
+    document.getElementById('computer-status').style.visibility = 'hidden';
 }
-// Add event listeners to player buttons
-playerButtons.forEach((button) => {
-    button.addEventListener('click', handlePlayerTurn);
-});
+
+// Function to update the player's option image
+function updatePlayerOptionImage(choice) {
+    const imagePath = `assets/images/${choice}.jpg`;
+    playerOptionImage.src = imagePath;
+}
+
+// Function to update the computer's option image
+function updateComputerOptionImage(choice) {
+    const imagePath = `assets/images/${choice}.jpg`;
+    computerOptionImage.src = imagePath;
+}
+
+// add event listener to all the buttons
+playerButtons.forEach(button => button.addEventListener('click', handleGameLogic));

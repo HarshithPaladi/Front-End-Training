@@ -1,192 +1,236 @@
-:root {
+html,
+body {
+    position: relative;
+    height: 100dvh;
+    margin: 0;
+}
+
+body {
     background: linear-gradient(to right, #56ccf2, #2f80ed);
+    height: 100dvh;
 }
 
-.navbar {
+.navbar-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
     height: 5vh;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(213, 221, 199);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 
-.game-container {
+.main-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    background-color: black;
     border-radius: 1rem;
+    /* margin: 0.5rem;
     padding: 0.5rem;
-    margin: 1rem;
-    flex-wrap: wrap;
+    background-color: black; */
 }
 
 .play-area {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 1rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-
+    justify-content: center;
+    flex-direction: column;
+    flex: 80%;
 }
 
-.player-area {
+.player {
+    flex: 60%;
+    background-color: #E97CBB;
+}
+
+.computer {
+    flex: 40%;
+    background-color: #E97CBB;
+    /* background-color: #add8e6; */
+}
+
+.title-area {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 1rem;
+    flex: 10%;
+}
+
+.empty {
+    flex: 10%;
 }
 
 .player-title {
-    width: 100%;
-}
-
-.computer-area {
-    display: flex;
-    flex: 1 1 0;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 1rem;
-}
-.player-option-image img {
-    width: 25%;
-    height: 25%;
-    border-radius: 25%;
-    border: 1px solid black;
-}
-
-.player-control-area {
+    flex: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.player-options {
+.status-container {
+    flex: 10%;
+    display: grid;
+    justify-content: center;
+}
+
+.player-status {
+    background-color: blue;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    visibility: visible;
+}
+
+.input-btn {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 50;
+    padding: 1rem;
 }
 
-.player-options button {
-    width: 150px;
-    height: 40px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input-btn button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: wheat;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.player-options button:hover {
-    background-color: #e0e0e0;
+.options {
+    flex: 60%;
 }
 
-.player-options button:focus {
-    outline: none;
-}
-
-.player-options button:active {
-    background-color: #d4d4d4;
-}
-.player-option-image {
-    display: flex;
-    align-items: center;
+.option-image {
+    flex: 40%;
+    display: grid;
     justify-content: center;
-    max-width: 50%;
 }
 
-.player-option-image img {
-    width: 25%;
-    height: 25%;
+#player-option-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     border-radius: 25%;
-    border: 1px solid black;
-
 }
 
-.player-control-area {
+.options-area {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.player-result-area {
-    display: flex;
-    justify-content: space-between;
+    flex: 80%;
+    flex-direction: row;
     align-items: center;
     width: 100%;
 }
 
-.computer-area {
+.result-area {
+    flex: 10%;
+    width: 90%;
+    background-color: wheat;
+    border-radius: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choice {
+    align-self: center;
+}
+
+.score {
+    align-self: center;
+}
+
+#computer-choice-div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 1rem;
 }
 
-.computer-title {
+#computer-option-image {
+    height: 100%;
     width: 100%;
-}
-
-.computer-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin: 1rem;
-}
-
-.computer-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.computer-option-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.computer-option-image img {
-    width: 25%;
-    height: 25%;
+    object-fit: cover;
     border-radius: 25%;
-    border: 1px solid black;
-
 }
 
-.computer-control-area {
-    display: flex;
+#computer-title {
+    position: relative;
+}
+
+#computer-title-area {
+    flex-direction: row-reverse;
+}
+
+#computer-status {
+    visibility: hidden;
+}
+
+.final-results {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    display: none;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+    background-color: red;
 }
 
-.computer-result-area {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+#player-option-image,
+#computer-option-image {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #56ccf2;
+    color: white;
+    transition: 0.5s;
+}
+
+button:active {
+    background-color: #2f80ed;
+    color: white;
+    transition: 0.5s;
+}
+
+/* Media query for medium-sized screens and below */
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+        max-height: max-content;
+        max-width: max-content;
+    }
+
+    .player,
+    .computer {
+        flex: 50%;
+    }
+
+    #computer-title-area {
+        flex-direction: row;
+    }
 }
