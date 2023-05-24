@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: List Folders
         id: list-folders
@@ -36,14 +36,14 @@ jobs:
           echo "::set-output name=folders::$FOLDERS"
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Folders
           path: ${{ steps.list-folders.outputs.folders }}
 
       - name: Deploy GitHub Pages
         id: deploy-pages
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
         with:
           strategy: replace
           path: ${{ steps.list-folders.outputs.folders }}
