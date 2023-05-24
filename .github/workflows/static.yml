@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload Artifacts
         if: steps.list-folders.outputs.folders != ''
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Folders
           path: ${{ steps.list-folders.outputs.folders }}
@@ -45,7 +45,7 @@ jobs:
       - name: Deploy GitHub Pages
         id: deploy-pages
         if: steps.list-folders.outputs.folders != ''
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v2
         with:
           strategy: replace
           path: ${{ steps.list-folders.outputs.folders }}
