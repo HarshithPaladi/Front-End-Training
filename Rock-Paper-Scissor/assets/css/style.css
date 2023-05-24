@@ -1,0 +1,192 @@
+:root {
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+}
+
+.navbar {
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(213, 221, 199);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    background-color: black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+.play-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.player-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.player-title {
+    width: 100%;
+}
+
+.computer-area {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+.player-option-image img {
+    width: 25%;
+    height: 25%;
+    border-radius: 25%;
+    border: 1px solid black;
+}
+
+.player-control-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-options button {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.player-options button:hover {
+    background-color: #e0e0e0;
+}
+
+.player-options button:focus {
+    outline: none;
+}
+
+.player-options button:active {
+    background-color: #d4d4d4;
+}
+.player-option-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.player-option-image img {
+    width: 25%;
+    height: 25%;
+    border-radius: 25%;
+    border: 1px solid black;
+
+}
+
+.player-control-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-result-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.computer-area {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.computer-title {
+    width: 100%;
+}
+
+.computer-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.computer-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer-option-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.computer-option-image img {
+    width: 25%;
+    height: 25%;
+    border-radius: 25%;
+    border: 1px solid black;
+
+}
+
+.computer-control-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer-result-area {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}

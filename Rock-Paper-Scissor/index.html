@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="navbar">
+            Rock-Paper-Scissors
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="play-area">
+            <div class="player-area">
+                <div class="player-title">
+                    <h2>Player Turn!</h2>
+                    <hr>
+                </div>
+                <div class="player-control-area">
+                    <div class="player-options">
+                        <button id="rock">Rock</button>
+                        <button id="paper">Paper</button>
+                        <button id="scissors">Scissors</button>
+                    </div>
+                    <div class="player-option-image">
+                        <img src="assets/images/default.jpg" alt="rock" id="player-option-image">
+
+                    </div>
+                </div>
+                <div class="player-result-area">
+                    <div class="player-choice">
+                        Your Choice: <span id="player-choice"></span>
+                    </div>
+                    <br>
+                    <div class="player-score">
+                        Score: <span id="player-score">0</span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="computer-area">
+                <div class="computer-title">
+                    <h2>Computer Turn!</h2>
+                    <hr>
+                </div>
+                <div class="computer-control-area">
+                    <div class="computer-option-image">
+                        <img src="assets/images/default.jpg" alt="rock" id="computer-option-image">
+
+                    </div>
+                </div>
+                <div class="computer-result-area">
+                    <div class="computer-choice">
+                        Computer Choice: <span id="computer-choice"></span>
+                    </div>
+                    <br>
+                    <div class="computer-score">
+                        Score: <span id="computer-score">0</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
