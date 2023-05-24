@@ -32,8 +32,8 @@ jobs:
       - name: List Modified Folders
         id: list-folders
         run: |
-            FOLDERS=$(git diff --name-only HEAD~1 HEAD | xargs -I{} dirname {} | sort -u | grep "StaticHTML" | xargs)
-            echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
+          FOLDERS=$(git log --name-only --pretty= --diff-filter=d ${GITHUB_SHA}^..${GITHUB_SHA} | xargs -I{} dirname {} | sort -u | grep "StaticHTML" | xargs)
+          echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
 
       - name: Upload Artifacts
         if: env.FOLDERS != ''
