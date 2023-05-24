@@ -1,0 +1,106 @@
+        body {
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card-content {
+            display: flex;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+
+        .current-weather ul{
+            margin: 0;
+            font-size: 18px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            display: block;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .forecast-item {
+            list-style: none;
+            margin: 10px;
+        }
+
+        .forecast-item h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .forecast-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .forecast-icon {
+            display: block;
+            margin: auto;
+            width: 50px;
+            height: 50px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        li{
+            margin: 5px;
+        }
+
+        .weather-details {
+            display: flex;
+            align-items: center;
+        }
+
+        .temperature {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: dotted;
+        }

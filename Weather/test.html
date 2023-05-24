@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+        integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/forecast.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header justify-content-center">
+                <a href="">
+                    <h3>Weather Information</h3>
+                </a>
+            </div>
+            <div class="card-content">
+                <div class="form-group">
+                    <label for="cityDropdown">Select City:</label>
+                    <select class="form-control" id="cityDropdown">
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Tokyo">Tokyo</option>
+                        <option value="Sydney">Sydney</option>
+                        <option value="Dubai">Dubai</option>
+                        <option value="Moscow">Moscow</option>
+                        <option value="Boston">Boston</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="getWeatherInfo()">Submit</button>
+            </div>
+            <div id="currentWeather"></div>
+            <ul id="forecastWeather"></ul>
+
+
+
+        </div>
+    </div>
+    <script src="assets/js/forecast.js"></script>
+</body>
+
+</html>

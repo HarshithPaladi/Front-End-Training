@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+            integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- <div>
+        <h2>Weather Information</h2>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button onclick="getWeatherInfo()">Get Weather</button>
+    </div>
+    <div>
+        <h3>Today's Weather</h3>
+        <p>City: <span id="cityName"></span></p>
+        <p>Temperature: <span id="temp"></span> &#8451;</p>
+        <p>Min Temperature: <span id="minTemp"></span> &#8451;</p>
+        <p>Max Temperature: <span id="maxTemp"></span> &#8451;</p>
+        <p>Weather: <span id="weather"></span></p>
+        <img id="weatherIcon" src="" alt="" title=""
+            style="display: none; margin: auto; width: 100px; height: 100px; border-radius: 50%;">
+    </div>
+
+<div>
+    <h3>Next 5 Days Forecast</h3>
+    <ul>
+        <li>
+            Day 1:
+            <span id="day1"></span>
+            <p>Temperature: <span id="day1Temp"></span> &#8451;</p>
+            <p>Weather: <span id="day1Weather"></span></p>
+            <img id="day1WeatherIcon" src="" alt="" title=""
+                style="display: none; margin: auto; width: 50px; height: 50px;">
+        </li>
+        <li>
+            Day 2:
+            <span id="day2"></span>
+            <p>Temperature: <span id="day2Temp"></span> &#8451;</p>
+            <p>Weather: <span id="day2Weather"></span></p>
+            <img id="day2WeatherIcon" src="" alt="" title=""
+                style="display: none; margin: auto; width: 50px; height: 50px;">
+        </li>
+        <li>
+            Day 3:
+            <span id="day3"></span>
+            <p>Temperature: <span id="day3Temp"></span> &#8451;</p>
+            <p>Weather: <span id="day3Weather"></span></p>
+            <img id="day3WeatherIcon" src="" alt="" title=""
+                style="display: none; margin: auto; width: 50px; height: 50px;">
+        </li>
+        <li>
+            Day 4:
+            <span id="day4"></span>
+            <p>Temperature: <span id="day4Temp"></span> &#8451;</p>
+            <p>Weather: <span id="day4Weather"></span></p>
+            <img id="day4WeatherIcon" src="" alt="" title=""
+                style="display: none; margin: auto; width: 50px; height: 50px;">
+        </li>
+        <li>
+            Day 5:
+            <span id="day5"></span>
+            <p>Temperature: <span id="day5Temp"></span> &#8451;</p>
+            <p>Weather: <span id="day5Weather"></span></p>
+            <img id="day5WeatherIcon" src="" alt="" title=""
+                style="display: none; margin: auto; width: 50px; height: 50px;">
+        </li>
+    </ul>
+</div> -->
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Weather Information</h3>
+        </div>
+        <div class="card-content">
+            <input type="text" id="city" placeholder="Enter city name">
+            <button onclick="getWeatherInfo()">Get Weather</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Today's Weather</h3>
+        </div>
+        <div class="card-content">
+            <p>City: <span id="cityName"></span></p>
+            <p>Temperature: <span id="temp"></span> &#8451;</p>
+            <p>Min Temperature: <span id="minTemp"></span> &#8451;</p>
+            <p>Max Temperature: <span id="maxTemp"></span> &#8451;</p>
+            <p>Weather: <span id="weather"></span></p>
+            <img id="weatherIcon" src="" alt="" title="" class="weather-icon">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Next 5 Days Forecast</h3>
+        </div>
+        <div class="card-content">
+            <ul>
+                <li class="forecast-item">
+                    <h4>Day 1: <span id="day1"></span></h4>
+                    <p>Temperature: <span id="day1Temp"></span> &#8451;</p>
+                    <p>Weather: <span id="day1Weather"></span></p>
+                    <img id="day1WeatherIcon" src="" alt="" title="" class="forecast-icon">
+                    <hr>
+                </li>
+                <li class="forecast-item">
+                    <h4>Day 2: <span id="day2"></span></h4>
+                    <p>Temperature: <span id="day2Temp"></span> &#8451;</p>
+                    <p>Weather: <span id="day2Weather"></span></p>
+                    <img id="day2WeatherIcon" src="" alt="" title="" class="forecast-icon">
+                    <hr>
+                </li>
+                <li class="forecast-item">
+                    <h4>Day 3: <span id="day3"></span></h4>
+                    <p>Temperature: <span id="day3Temp"></span> &#8451;</p>
+                    <p>Weather: <span id="day3Weather"></span></p>
+                    <img id="day3WeatherIcon" src="" alt="" title="" class="forecast-icon">
+                    <hr>
+                </li>
+                <li class="forecast-item">
+                    <h4>Day 4: <span id="day4"></span></h4>
+                    <p>Temperature: <span id="day4Temp"></span> &#8451;</p>
+                    <p>Weather: <span id="day4Weather"></span></p>
+                    <img id="day4WeatherIcon" src="" alt="" title="" class="forecast-icon">
+                    <hr>
+                </li>
+                <li class="forecast-item">
+                    <h4>Day 5: <span id="day5"></span></h4>
+                    <p>Temperature: <span id="day5Temp"></span> &#8451;</p>
+                    <p>Weather: <span id="day5Weather"></span></p>
+                    <img id="day5WeatherIcon" src="" alt="" title="" class="forecast-icon">
+                    <hr>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
