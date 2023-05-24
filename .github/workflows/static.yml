@@ -27,25 +27,25 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: List Modified Folders
         id: list-folders
         run: |
           FOLDERS=$(git diff --name-only HEAD^ HEAD | xargs -I{} dirname {} | sort -u | grep "StaticHTML" | xargs)
-          echo "::set-output name=folders::$FOLDERS"
+          echo "FOLDERS=$FOLDERS" >> $GITHUB_ENV
 
       - name: Upload Artifacts
-        if: steps.list-folders.outputs.folders != ''
-        uses: actions/upload-artifact@v3
+        if: env.FOLDERS != ''
+        uses: actions/upload-artifact@v2
         with:
           name: Folders
-          path: ${{ steps.list-folders.outputs.folders }}
+          path: ${{ env.FOLDERS }}
 
       - name: Deploy GitHub Pages
         id: deploy-pages
-        if: steps.list-folders.outputs.folders != ''
-        uses: actions/deploy-pages@v2
+        if: env.FOLDERS != ''
+        uses: actions/deploy-pages@v3
         with:
           strategy: replace
-          path: ${{ steps.list-folders.outputs.folders }}
+          path: ${{ env.FOLDERS }}
