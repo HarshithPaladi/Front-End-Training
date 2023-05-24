@@ -8,10 +8,180 @@
     <title>Harshith's Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
         integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand m-3" href="#">Harshith Paladi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse m-3 justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ml-auto mr-auto ">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Harshith Paladi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <section id="about" class="bg-gradient py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Me</h2>
+                    <p>I am a student at SASTRA Deemed University, Thanjavur, currently pursuing my Bachelor of Science
+                        in
+                        Computer Science.<br>A self taught programmer interested in learning new technologies.</p>
+                </div>
+                <div class="col-md-6 row-cols-md-3 col-sm-3 row-sm-3">
+                    <img src="assets/images/harshith.jpeg" alt="Profile Picture" class="img-fluid rounded-circle">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-light py-5">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Presidio</h4>
+                    <p>Position: Intern</p>
+                    <p>Date: March 2023 - Present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Front-end</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Other</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-light py-5">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dockerizing a Django App</h5>
+                            <ul>
+                                <li>Django app and MySQL DB are run in seperate containers. Services are run using
+                                    docker compose</li>
+                                <li>Reduced image size by 80%</li>
+                            </ul>
+                            <a href="https://github.com/HarshithPaladi/mysql-django" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">DNS Over HTTPS ,Adblock server</h5>
+                            <ul>
+                                <li>Custom DNS over HTTPS endpoint</li>
+                                <li>DNS based adblocking, Ratelimited queries, DDOS protected
+                                    endpoint</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact</h2>
+            <div class="row">
+                <div class="fs-4 mb-3 ">
+                    <a class="mr-6" href="https://harshithpaladi.dev"><i class="bi bi-browser-chrome"> Website</i> </a>
+                    <a class="mr-6" href="mailto:harshithpaladi2002@gmail.com"><i class="bi bi-envelope"> Mail</i> </a>
+                    <a class="mr-6" href="tel:+918247850989"><i class="bi bi-telephone"> Phone</i> </a>
+                    <a class="mr-6" href="https://www.linkedin.com/in/harshithpaladi"><i class="bi bi-linkedin"> LinkedIn</i> </a>
+                </div>
+                <!-- <div class="col-md-6">
+                    <h4>Website</h4>
+                    <p><a href="https://harshithpaladi.dev"><i class="bi bi-browser-chrome"></i> </a></p>
+                    <h4>Email</h4>
+                    <p><a href="mailto:harshithpaladi2002@gmail.com"><i class="bi bi-envelope"></i> Harshith Paladi</a></p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Phone</h4>
+                    <a href="tel:+918247850989"><i class="bi bi-telephone"></i>  82478-50989</a>
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/in/harshithpaladi"><i class="bi bi-linkedin"></i>  Harshith Paladi</a></p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

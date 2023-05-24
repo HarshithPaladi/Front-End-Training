@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body{
+           background: hsla(192, 95%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(192, 95%, 50%, 1) 0%, hsla(225, 89%, 47%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#07C8F9", endColorstr="#0D41E1", GradientType=1 );
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode a {
+            color: #fff;
+        }
+
+        .dark-mode .navbar {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body class="gradient-bg">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Resume</a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
+                <label class="form-check-label" for="dark-mode-toggle">Dark Mode</label>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>John Doe</h1>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Email: johndoe@example.com</li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Education</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Bachelor's Degree</h3>
+                <p>University of XYZ</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Master's Degree</h3>
+                <p>ABC University</p>
+            </div>
+        </div>
+
+        <h2>Work Experience</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Company A</h3>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Company B</h3>
+                <p>UI/UX Designer</p>
+            </div>
+        </div>
+
+        <h2>Personal Projects</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Project A</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Project B</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <h2>Certificates</h2>
+        <ul>
+            <li>Certificate A</li>
+            <li>Certificate B</li>
+        </ul>
+    </div>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+        if (isDarkMode) {
+            enableDarkMode();
+        }
+
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', true);
+        }
+
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', false);
+        }
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
