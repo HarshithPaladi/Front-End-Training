@@ -90,12 +90,14 @@ function resetGame() {
 
 // Function to update the player's option image
 function updatePlayerOptionImage(choice) {
+    choice = choice.charAt(0).toUpperCase() + choice.slice(1);
     const imagePath = `assets/images/${choice}.jpg`;
     playerOptionImage.src = imagePath;
 }
 
 // Function to update the computer's option image
 function updateComputerOptionImage(choice) {
+    choice = choice.charAt(0).toUpperCase() + choice.slice(1);
     const imagePath = `assets/images/${choice}.jpg`;
     computerOptionImage.src = imagePath;
 }
