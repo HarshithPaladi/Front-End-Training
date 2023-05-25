@@ -1,4 +1,13 @@
+.stones-container {
+    height: 100vh;
+    overflow-y: auto;
+}
+
 #map {
-    width: 45dvw;
-    height: 80dvh;
+    height: 100%;
+}
+
+.card-img-top {
+    max-height: 150px;
+    object-fit: contain;
 }
