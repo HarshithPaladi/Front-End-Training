@@ -113,7 +113,7 @@ function initializePopup() {
     });
 }
 
-function showMapAndStones(stoneIndex) {
+async function showMapAndStones(stoneIndex) {
     console.log("Stone Index: " + stoneIndex);
     let coordinates = stones[stoneIndex].location;
     let stoneName = stones[stoneIndex].name;
@@ -194,3 +194,30 @@ function showMapAndStones(stoneIndex) {
 initializeMap([0, 0]);
 initializePulsingDot();
 initializePopup();
+
+
+// for infinity stones page
+function openAndLoadMap(stoneIndex) {
+    window.open("map.html" + "?stoneIndex=" + stoneIndex, "_self");
+}
+
+// write a function to get the url parameter stoneIndex
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+async function loadMapByStoneIndex() {
+    window.onload = function () {
+        var stoneIndex = parseInt(getUrlParameter("stoneIndex"));
+        if (isNaN(stoneIndex)) {
+            stoneIndex = 0;
+        }
+        console.log("Here is " + stoneIndex);
+        setTimeout(async function () {
+            await showMapAndStones(stoneIndex);
+        }, 1800);
+    };
+}
