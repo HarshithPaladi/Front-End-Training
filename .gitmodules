@@ -1,0 +1,3 @@
+[submodule "ThanosTrackr"]
+	path = ThanosTrackr
+	url = https://github.com/HarshithPaladi/ThanosTrackr.git
