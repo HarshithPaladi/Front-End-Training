@@ -9,27 +9,27 @@ var stones = [
     {
         name: 'Power Stone',
         image: 'assets/images/Power_Stone_VFX.webp',
-        location: [67.8777, 29.0760]
+        location: [-26.52989, -59.0]
     },
     {
         name: 'Reality Stone',
         image: 'assets/images/Reality_Stone_VFX.webp',
-        location: [72.8777, 19.0760]
+        location: [77.15226, 70.22979]
     },
     {
         name: 'Soul Stone',
         image: 'assets/images/Soul_Stone_VFX.webp',
-        location: [72.8777, 19.0760]
+        location: [2.73639, 44.08465]
     },
     {
         name: 'Space Stone',
         image: 'assets/images/Space_Stone_VFX.webp',
-        location: [72.8777, 19.0760]
+        location: [35.71805, -83.82294]
     },
     {
         name: 'Time Stone',
         image: 'assets/images/Time_Stone_VFX.webp',
-        location: [72.8777, 19.0760]
+        location: [3.93420, 31.41928]
     }
 ];
 var popup;
@@ -208,16 +208,36 @@ function getUrlParameter(name) {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
-
-async function loadMapByStoneIndex() {
+async function loadMap() {
     window.onload = function () {
         var stoneIndex = parseInt(getUrlParameter("stoneIndex"));
-        if (isNaN(stoneIndex)) {
-            stoneIndex = 0;
-        }
+        // if (isNaN(stoneIndex)) {
+        //     stoneIndex = 0;
+        // }
         console.log("Here is " + stoneIndex);
+        // window.addEventListener("load", function () {
+        //     var loadingOverlay = document.getElementById("loadingOverlay");
+
+        //     setTimeout(function () {
+        //         loadingOverlay.classList.add("loading-overlay-hidden");
+        //     }, 1000);
+        // });
         setTimeout(async function () {
             await showMapAndStones(stoneIndex);
         }, 1800);
     };
+    window.addEventListener("load", function () {
+        var loadingOverlay = document.getElementById("loadingOverlay");
+        setTimeout(function () {
+            loadingOverlay.classList.add("loading-overlay-hidden");
+        }, 1000);
+    });
+
+}
+async function loadMapByStoneIndex() {
+    loadMap();
+}
+
+function pageLoadingScreen() {
+
 }
